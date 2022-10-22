@@ -24,4 +24,11 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+
+for code in goods:
+    count, count_price = 0, 0
+    for item in store[goods[code]]:
+        count += item["quantity"]
+        count_price += item["quantity"] * item["price"]
+    print(f"{code} - {count}  штук{'и' if count % 10 < 5 else ''},"
+          f" стоимость {count_price:,d} руб{'ля' if count_price % 10 == 2 or count_price % 10 == 4 else 'лей'}" )
