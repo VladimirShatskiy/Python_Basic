@@ -20,25 +20,20 @@ students = {
 }
 
 
-def f(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
+def fun():
+    long, s_interest = 0, []
+
+    for i, i_value in students.items():
+        s_interest += i_value["interests"]
+        long += len(i_value["surname"])
+
+    return set(s_interest), long
 
 
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
+num_age = [(i, i_value["age"]) for i, i_value in students.items()]
+ans = fun()
 
-
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
-
-# TODO исправить код
+print('Список пар "ID студента — возраст":', num_age)
+print("Полный список интересов всех студентов: {}\n Общая длина всех фамилий студентов: {}".format(
+    ans[0],
+    ans[1]))
