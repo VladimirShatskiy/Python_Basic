@@ -7,12 +7,16 @@ def fact(num):
 
 
 def calculating_math_func(data):
-    # result = 1
+  if data in list_fact.keys():
+    return list_fact[data]
+  else:
     result = fact(data)
-    # for index in range(1, data + 1):
-    #     result *= index
     result /= data ** 3
     result = result ** 10
+    list_fact[data] = result
     return result
 
-print(calculating_math_func(5))
+
+list_fact = {}
+for i in range(int(input("сколько цыфр проверяем "))):
+  print(calculating_math_func(int(input("Введи число "))))
