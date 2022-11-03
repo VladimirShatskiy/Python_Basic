@@ -1,10 +1,14 @@
-def tower(n, disk_from, mid, disk_targ):
-    if n == 1:
-        return print(f"Переложить диск {n} со стержня номер {disk_from} на стержень с номером {disk_targ}")
-    else:
-        tower(n - 1, disk_from, disk_targ, mid)
-        print(f"Переложить диск {n} со стержня номер {disk_from} на стержень с номером {disk_targ}")
-        tower(n - 1, mid, disk_from, disk_targ)
+def check_number(number):
+    return count_number_len(number) > 4
 
+def count_number_len(x):
+    count = 0
+    while x:
+        count += 1
+        x //= 10
 
-tower(int(input("Введите количество дисков ")), "1", "2", "3")
+x = 1234
+if check_number(x):
+    print("1")
+else:
+    print("2")
