@@ -1,7 +1,7 @@
 count = 0
 
 with open("calc.txt", "r", encoding='utf-8') as file_open:
-  date_file = file_open.read().split('\n')
+    date_file = file_open.read().split('\n')
 
 for item in range(len(date_file)):
   try:
