@@ -13,12 +13,12 @@ class Man:
 
     def eat(self, eat=20):
         self.eat_level += eat
-        self.home.fridge -= eat
+        self.home.add_eat(-eat)
         print(f'{self.name} поел')
 
     def work(self, money=30, eat=20):
         self.eat_level -= eat
-        self.home.money += money
+        self.home.add_money(money)
         print(f'{self.name} поработал')
 
     def game(self, eat=20):
@@ -26,9 +26,10 @@ class Man:
         print(f'{self.name} поиграл')
 
     def shop(self, money=30, eat=20):
-        self.home.money -= money
-        self.home.fridge += eat
+        self.home.add_money(-eat)
+        self.home.add_eat(eat)
         print(f'{self.name} сходил в магазин')
+
 
 class Home:
 
@@ -36,14 +37,21 @@ class Home:
         self.money = money
         self.fridge = fridge
 
-mens =[]
+    def add_money(self, money=20):
+        self.money += money
+
+    def add_eat(self, eat):
+        self.fridge += eat
+
+
+mens = []
 is_home = Home()
 man1 = Man(is_home)
 man2 = Man(is_home, 'Петр')
 mens.append(man1)
 mens.append(man2)
 
-for _ in range(565):
+for _ in range(365):
     for i in range(len(mens)):
         cube = random.randint(1, 6)
 
