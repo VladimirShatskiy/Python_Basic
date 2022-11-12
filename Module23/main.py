@@ -14,9 +14,9 @@ def read_file():
   except FileNotFoundError:
     print('\nНа данный момент файл пуст или отсутвует, внесите первую запись\n')
 
+user_name: str = input('\nИмя пользователя?: ')
 
 while True:
-  user_name: str = input('\nИмя пользователя?: ')
   print(f'\nВыбери действие:  \n'
         f'1 - Прочитать чат\n'
         f'2 - Внести текст в чат  ', end = '')
