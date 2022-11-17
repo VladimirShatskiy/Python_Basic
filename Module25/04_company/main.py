@@ -1,4 +1,5 @@
-from Fio import *
+from Fio import generate_age, generate_surname, generate_name
+import random
 
 class Person:
     def __init__(self, name, surname, age):
