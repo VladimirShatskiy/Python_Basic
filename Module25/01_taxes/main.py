@@ -1,3 +1,6 @@
+#
+#
+
 class Property:
     def __init__(self, worth=1000):
         self.worth = worth
